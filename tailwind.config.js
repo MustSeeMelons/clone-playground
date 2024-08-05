@@ -18,7 +18,7 @@ export default {
         logoSpin: "logoSpin infinite 20s linear",
       },
       fontFamily: {
-        font: [
+        appFont: [
           "Inter",
           "system-ui",
           "Avenir",

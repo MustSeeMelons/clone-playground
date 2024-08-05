@@ -4,9 +4,10 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gray-100
-     dark:bg-gray-800 
-     rounded-lg
+    @apply 
+    bg-gray-100
+    dark:bg-gray-900
+    rounded-lg
     border-solid
     border-transparent
     border
@@ -27,5 +28,5 @@ a {
 }
 
 h1 {
-  @apply text-5xl leading-5;
+  @apply p-3 text-5xl leading-5 font-bold my-8;
 }

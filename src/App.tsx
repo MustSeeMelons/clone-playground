@@ -12,14 +12,14 @@ function App() {
           {/* XXX will-change-filter was in the CSS */}
           <img
             src={viteLogo}
-            className="logo transition-shadow p-6 h-24 hover:drop-shadow-logoVite"
+            className="logo transition-shadow p-6 h-36 hover:drop-shadow-logoVite"
             alt="Vite logo"
           />
         </a>
         <a className="self-start" href="https://react.dev" target="_blank">
           <img
             src={reactLogo}
-            className="motion-safe:animate-logoSpin transition-shadow p-6 h-24 hover:drop-shadow-logoReact"
+            className="motion-safe:animate-logoSpin transition-shadow p-6 h-36 hover:drop-shadow-logoReact"
             alt="React logo"
           />
         </a>
@@ -32,7 +32,7 @@ function App() {
         >
           count is {count}
         </button>
-        <p>
+        <p className="py-2">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
