@@ -1,9 +1,26 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import { useAtom } from "jotai";
+import { counterAtom, stringifiedCounterAtom } from "./state/state";
+import { useQuery } from "@tanstack/react-query";
+
+const randomUrl = "https://picsum.photos/v2/list?limit=10";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [, setCount] = useAtom(counterAtom);
+  const [stringifiedCount] = useAtom(stringifiedCounterAtom);
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["random_fetch"],
+    queryFn: () => {
+      fetch(randomUrl).then((response) => {
+        return response.json().then((result) => {
+          console.log(result);
+          return result;
+        });
+      });
+    },
+  });
 
   return (
     <>
@@ -24,13 +41,13 @@ function App() {
           />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React {isPending ? "is waiting" : ""}</h1>
       <div className="p-8">
         <button
           className="btn-primary"
           onClick={() => setCount((count) => count + 1)}
         >
-          count is {count}
+          {stringifiedCount}
         </button>
         <p className="py-2">
           Edit <code>src/App.tsx</code> and save to test HMR

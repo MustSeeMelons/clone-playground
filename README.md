@@ -4,7 +4,6 @@
 
 Decide what app to copy - 9gag again?
 
-- Tailwind the vite app
 - Jotai
 - React query
 - Suspense
